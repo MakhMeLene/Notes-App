@@ -1,4 +1,4 @@
-# Basic Calculator App
+# Notes App
 
 ---
 
@@ -21,7 +21,7 @@ A simple and responsive note taking app made using **HTML**, **CSS**, and **Java
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/teo003/note-app-js.git
+   git clone https://github.com/makhmelene/note-app-js.git
 
 ---
 
