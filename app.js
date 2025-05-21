@@ -27,6 +27,7 @@ const saveNotes=()=> {
 
     const contentData=data.map((item)=>item.title);
     localStorage.setItem("notes",JSON.stringify(contentData));
+    
 };
 
 //Addnote Button function
@@ -54,22 +55,35 @@ const addNote=(text="",title="")=>{
         </textarea>
     `;
 
-    function handleTrashClick()  {
+    function remove (note){
+        console.log("remove function called");
         note.remove();
         saveNotes();
     }
 
-    function handleSaveClick()  {
-        saveNotes();
-    }
+    // function handleTrashClick()  {
+    //     note.remove();
+    //     saveNotes();
+    // }
+    // function handleSaveClick()  {
+    //     saveNotes();
+    // }
 
     const delBtn = note.querySelector(".trash");
     const saveBtn= note.querySelector(".save");
     const textareas= note.querySelector(".textarea");
 
 
-    delBtn.addEventListener("click",handleTrashClick());
-    saveBtn.addEventListener("click",handleSaveClick());
+    delBtn.addEventListener("click",() =>{
+        console.log("trash button  clicked");
+        remove(note);
+        alert ("Your note has been removed")
+    });
+    saveBtn.addEventListener("click",() => {
+        console.log("save button  clicked");
+        saveNotes();
+        alert ("Your note has been saved");
+    });
     main.appendChild(note);
     saveNotes();
 };
